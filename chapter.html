@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AniManga - Capitulo</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header>
+    <h1>AniManga</h1>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="animes.html">Animes</a>
+      <a href="mangas.html">Mangas</a>
+      <a href="create.html">Agregar</a>
+    </nav>
+  </header>
+
+  <main>
+    <div id="chapter-container"></div>
+
+    <div class="comments-section" id="comments-section">
+      <h3>Comentarios del capitulo</h3>
+      <div id="comments-list"></div>
+
+      <div class="form-container" style="margin-top: 1rem;">
+        <form id="comment-form">
+          <div class="form-group">
+            <label for="comment-author">Nombre</label>
+            <input type="text" id="comment-author" required>
+          </div>
+          <div class="form-group">
+            <label for="comment-content">Comentario</label>
+            <textarea id="comment-content" rows="3" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Comentar</button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <script src="js/api.js"></script>
+  <script src="js/chapter.js"></script>
+</body>
+</html>
