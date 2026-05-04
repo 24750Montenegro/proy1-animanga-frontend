@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AniManga - Agregar serie</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header>
+    <h1>AniManga</h1>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="animes.html">Animes</a>
+      <a href="mangas.html">Mangas</a>
+      <a href="create.html">Agregar</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2 class="page-title">Agregar serie</h2>
+
+    <div class="form-container">
+      <form id="create-form">
+        <div class="form-group">
+          <label for="title">Titulo</label>
+          <input type="text" id="title" required>
+        </div>
+
+        <div class="form-group">
+          <label for="type">Tipo</label>
+          <select id="type" required>
+            <option value="anime">Anime</option>
+            <option value="manga">Manga</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="synopsis">Sinopsis</label>
+          <textarea id="synopsis" rows="4"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="image">Imagen</label>
+          <input type="file" id="image" accept="image/*">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Crear</button>
+      </form>
+    </div>
+  </main>
+
+  <script src="js/api.js"></script>
+  <script src="js/create.js"></script>
+</body>
+</html>
