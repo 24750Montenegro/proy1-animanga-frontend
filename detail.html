@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AniManga - Detalle</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header>
+    <h1>AniManga</h1>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="animes.html">Animes</a>
+      <a href="mangas.html">Mangas</a>
+      <a href="create.html">Agregar</a>
+    </nav>
+  </header>
+
+  <main>
+    <div id="detail-container"></div>
+
+    <!-- Seccion de rating -->
+    <div class="rating-section" id="rating-section">
+      <label for="rating-select">Calificar:</label>
+      <select id="rating-select">
+        <option value="">--</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+      </select>
+      <button class="btn btn-primary" id="rate-btn">Enviar</button>
+    </div>
+
+    <!-- Agregar capitulo -->
+    <div class="form-container" style="margin-top: 2rem;">
+      <h3>Agregar capitulo</h3>
+      <form id="chapter-form">
+        <div class="form-group">
+          <label for="chapter-number">Numero</label>
+          <input type="number" id="chapter-number" min="1" required>
+        </div>
+        <div class="form-group">
+          <label for="chapter-title">Titulo (opcional)</label>
+          <input type="text" id="chapter-title">
+        </div>
+        <button type="submit" class="btn btn-primary">Agregar</button>
+      </form>
+    </div>
+
+    <!-- Capitulos -->
+    <div class="chapters-list" id="chapters-list">
+      <h3>Capitulos</h3>
+    </div>
+
+    <!-- Comentarios de la serie -->
+    <div class="comments-section" id="comments-section">
+      <h3>Comentarios</h3>
+      <div id="comments-list"></div>
+
+      <div class="form-container" style="margin-top: 1rem;">
+        <form id="comment-form">
+          <div class="form-group">
+            <label for="comment-author">Nombre</label>
+            <input type="text" id="comment-author" required>
+          </div>
+          <div class="form-group">
+            <label for="comment-content">Comentario</label>
+            <textarea id="comment-content" rows="3" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Comentar</button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <script src="js/api.js"></script>
+  <script src="js/detail.js"></script>
+</body>
+</html>
