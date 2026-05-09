@@ -10,15 +10,39 @@
   <header>
     <h1>AniManga</h1>
     <nav>
-      <a href="index.html">Inicio</a>
+      <a href="../index.html">Inicio</a>
       <a href="animes.html">Animes</a>
       <a href="mangas.html">Mangas</a>
-      <a href="create.html">Agregar</a>
+      <a href="create.html" class="nav-cta">+ Nueva serie</a>
     </nav>
   </header>
 
   <main>
     <div id="detail-container"></div>
+
+    <div class="toolbar" id="edit-toolbar" style="display: none;">
+      <button class="btn btn-secondary" id="toggle-edit-btn">Editar serie</button>
+    </div>
+
+    <div class="form-container hidden" id="edit-section" style="margin-top: 1rem;">
+      <h3>Editar serie</h3>
+      <form id="edit-form">
+        <div class="form-group">
+          <label for="edit-title">Titulo</label>
+          <input type="text" id="edit-title" required>
+        </div>
+        <div class="form-group">
+          <label for="edit-synopsis">Sinopsis</label>
+          <textarea id="edit-synopsis" rows="4"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="edit-image">Reemplazar imagen (opcional)</label>
+          <input type="file" id="edit-image" accept="image/*">
+        </div>
+        <button type="submit" class="btn btn-primary">Guardar</button>
+        <button type="button" class="btn btn-secondary" id="cancel-edit-btn">Cancelar</button>
+      </form>
+    </div>
 
     <!-- Seccion de rating -->
     <div class="rating-section" id="rating-section">

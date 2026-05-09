@@ -85,6 +85,25 @@ nav a:hover {
   text-decoration: none;
 }
 
+nav a.nav-cta {
+  background-color: var(--accent);
+  color: #0d1117;
+  padding: 0.4rem 0.9rem;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  transition: background-color 0.15s, transform 0.1s;
+}
+
+nav a.nav-cta:hover {
+  background-color: var(--accent-hover);
+  color: #0d1117;
+  text-decoration: none;
+}
+
+nav a.nav-cta:active {
+  transform: scale(0.97);
+}
+
 /* ── Layout ── */
 main {
   max-width: 1100px;
@@ -429,6 +448,17 @@ main {
   color: var(--text-primary);
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
+}
+
+/* ── Toolbar ── */
+.toolbar {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 1rem;
+}
+
+.hidden {
+  display: none;
 }
 
 /* ── Filters ── */

@@ -10,7 +10,7 @@ function renderCard(series) {
   card.onclick = () => window.location.href = `detail.html?id=${series.id}`;
 
   const avgRating = Number(series.avg_rating).toFixed(1);
-  const imageUrl = series.image_url ? `http://localhost:3000${series.image_url}` : '';
+  const imageUrl = series.image_url ? `${API_BASE}${series.image_url}` : '';
 
   card.innerHTML = `
     ${imageUrl ? `<img src="${imageUrl}" alt="${series.title}">` : '<div class="no-image">?</div>'}
@@ -36,5 +36,9 @@ async function load() {
 
   data.forEach(s => grid.appendChild(renderCard(s)));
 }
+
+document.getElementById('export-csv-btn').addEventListener('click', () => {
+  window.location.href = getCsvExportUrl(type);
+});
 
 load();

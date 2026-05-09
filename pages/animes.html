@@ -10,15 +10,18 @@
   <header>
     <h1>AniManga</h1>
     <nav>
-      <a href="index.html">Inicio</a>
+      <a href="../index.html">Inicio</a>
       <a href="animes.html">Animes</a>
       <a href="mangas.html">Mangas</a>
-      <a href="create.html">Agregar</a>
+      <a href="create.html" class="nav-cta">+ Nueva serie</a>
     </nav>
   </header>
 
   <main>
     <h2 class="page-title">Animes</h2>
+    <div class="toolbar">
+      <button id="export-csv-btn" class="btn btn-secondary">Exportar CSV</button>
+    </div>
     <div class="series-grid" id="series-grid"></div>
   </main>
 

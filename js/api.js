@@ -1,4 +1,17 @@
-const API_URL = 'http://localhost:3000/api';
+const API_BASE = (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')
+  ? 'http://localhost:3000'
+  : 'https://proy1-animanga-backend.onrender.com';
+const API_URL = `${API_BASE}/api`;
+
+async function safeJson(res) {
+  try {
+    const data = await res.json();
+    if (!res.ok && !data.error) data.error = `Error ${res.status}`;
+    return data;
+  } catch {
+    return { error: `Error ${res.status}` };
+  }
+}
 
 async function fetchSeries(type) {
   const url = type ? `${API_URL}/series?type=${type}` : `${API_URL}/series`;
@@ -16,7 +29,7 @@ async function createSeries(formData) {
     method: 'POST',
     body: formData,
   });
-  return res.json();
+  return safeJson(res);
 }
 
 async function updateSeries(id, formData) {
@@ -24,7 +37,7 @@ async function updateSeries(id, formData) {
     method: 'PUT',
     body: formData,
   });
-  return res.json();
+  return safeJson(res);
 }
 
 async function deleteSeries(id) {
@@ -71,4 +84,8 @@ async function rateSeries(seriesId, score) {
     body: JSON.stringify({ score }),
   });
   return res.json();
+}
+
+function getCsvExportUrl(type) {
+  return type ? `${API_URL}/series/exportcsv?type=${type}` : `${API_URL}/series/exportcsv`;
 }

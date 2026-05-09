@@ -16,7 +16,7 @@ async function loadDetail() {
   }
 
   const avgRating = Number(series.avg_rating).toFixed(1);
-  const imageUrl = series.image_url ? `http://localhost:3000${series.image_url}` : '';
+  const imageUrl = series.image_url ? `${API_BASE}${series.image_url}` : '';
 
   container.innerHTML = `
     <div class="series-detail">
@@ -31,6 +31,10 @@ async function loadDetail() {
       </div>
     </div>
   `;
+
+  document.getElementById('edit-title').value = series.title || '';
+  document.getElementById('edit-synopsis').value = series.synopsis || '';
+  document.getElementById('edit-toolbar').style.display = 'flex';
 
   renderChapters(series.chapters || []);
   renderComments(series.comments || []);
@@ -99,6 +103,37 @@ document.getElementById('comment-form').addEventListener('submit', async (e) => 
 
   await createCommentForSeries(seriesId, { author, content });
   location.reload();
+});
+
+// Toggle edicion
+const editSection = document.getElementById('edit-section');
+document.getElementById('toggle-edit-btn').addEventListener('click', () => {
+  editSection.classList.toggle('hidden');
+});
+document.getElementById('cancel-edit-btn').addEventListener('click', () => {
+  editSection.classList.add('hidden');
+});
+
+// Guardar edicion
+document.getElementById('edit-form').addEventListener('submit', async (e) => {
+  e.preventDefault();
+
+  const formData = new FormData();
+  formData.append('title', document.getElementById('edit-title').value);
+  formData.append('synopsis', document.getElementById('edit-synopsis').value);
+
+  const imageInput = document.getElementById('edit-image');
+  if (imageInput.files[0]) {
+    formData.append('image', imageInput.files[0]);
+  }
+
+  const result = await updateSeries(seriesId, formData);
+
+  if (result.id) {
+    location.reload();
+  } else {
+    alert(result.error || 'Error al actualizar la serie');
+  }
 });
 
 loadDetail();

@@ -13,7 +13,7 @@
       <a href="index.html">Inicio</a>
       <a href="pages/animes.html">Animes</a>
       <a href="pages/mangas.html">Mangas</a>
-      <a href="pages/create.html">Agregar</a>
+      <a href="pages/create.html" class="nav-cta">+ Nueva serie</a>
     </nav>
   </header>
 
@@ -24,6 +24,10 @@
       <button class="active" data-filter="">Todos</button>
       <button data-filter="anime">Anime</button>
       <button data-filter="manga">Manga</button>
+    </div>
+
+    <div class="toolbar">
+      <button id="export-csv-btn" class="btn btn-secondary">Exportar CSV</button>
     </div>
 
     <div class="series-grid" id="series-grid"></div>
