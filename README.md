@@ -4,6 +4,7 @@ Frontend de la aplicacion AniManga hecho con HTML, CSS y JavaScript vanilla. Con
 
 ## 1. Enlaces Importantes
 
+- Link al deploy: https://animanga.jfmonte.com
 - Link al otro repositorio: https://github.com/24750Montenegro/proy1-animanga-backend
 - Link a este repositorio: https://github.com/24750Montenegro/proy1-animanga-frontend
 
@@ -28,6 +29,8 @@ Linux:
 Si en algun momento cambias la URL del backend, actualiza `js/api.js` con la nueva direccion de la API.
 
 ## 3. Screenshot de la Aplicacion
+
+![Frontend de AniManga](frontend-animanga.png)
 
 ## 4. Configuracion de CORS
 
