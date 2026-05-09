@@ -6,7 +6,7 @@ let currentFilter = '';
 function renderCard(series) {
   const card = document.createElement('div');
   card.className = 'series-card';
-  card.onclick = () => window.location.href = `detail.html?id=${series.id}`;
+  card.onclick = () => window.location.href = `pages/detail.html?id=${series.id}`;
 
   const avgRating = Number(series.avg_rating).toFixed(1);
   const imageUrl = series.image_url ? `${API_BASE}${series.image_url}` : '';
