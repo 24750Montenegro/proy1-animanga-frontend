@@ -5,6 +5,9 @@ Frontend de la aplicacion AniManga hecho con HTML, CSS y JavaScript vanilla. Con
 ## 1. Enlaces Importantes
 
 - Link al deploy: https://animanga.jfmonte.com
+(hosting en render, las imágenes pueden desaparecer cada cierto tiempo porque el storage es de plan de paga y no quise guardarlas en base64😅, pero puedes subir nuevas imágenes y estarán ahí hasta que render decida eliminarlas)
+
+
 - Link al otro repositorio: https://github.com/24750Montenegro/proy1-animanga-backend
 - Link a este repositorio: https://github.com/24750Montenegro/proy1-animanga-frontend
 
